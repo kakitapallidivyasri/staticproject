@@ -1,0 +1,34 @@
+<html>
+    <head>
+          <title>SI CALCULATOR</title>
+          <style>
+              .body{
+                  color: blue;
+                  text-align: center;
+                  margin-top: 200px;
+                  font-size: 80px;
+                  background-color:aqua 
+              }
+              h1{
+                  font-size: 50px;
+              }
+          </style>
+          <script>
+              function Calculate(){
+                  p = document.getElementById('p').value
+                  r= document.getElementById('r').value
+                  t = document.getElementById('t').value
+                result= document.getElementById('result')
+                    result.innerHTML = (p*t*r/100)
+              }
+
+          </script>
+    </head>
+    <body class= 'body'>
+        principle Amount: <input id= "p" type="text"></body></br>
+        rate            : <input id="r" type="text"></br>
+        time            : <input id= "t" type="text"></br>
+        <button onclick="Calculate()">Calculate</button>
+        <h1 id = "result">THE SIMPLE INTEREST IS: </h1>
+    </body>
+</html>
