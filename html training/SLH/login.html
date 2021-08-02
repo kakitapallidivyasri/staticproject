@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+
+
+       
+    </style>
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
+</head>
+
+<body>
+    
+
+<div id='boxId' class='box'>invalid details</div>
+<div>
+  email: <input id="log" type="text">
+</div>
+<div>
+  password: <input id="login" type="text">
+</div>
+<button onclick="getevent()">Login</button>
+
+
+<script>
+    document.getElementById('boxId').style.display='none';
+    
+function getevent() {
+var email= document.getElementById('log').value;
+var password =document.getElementById('login').value; 
+
+ var jsonString = localStorage.getItem('signupDetails');
+var details =JSON.parse(jsonString);
+
+if (email==details.email&& password== details.password) {
+
+
+window.location.href='home.html';
+}else{
+   document.getElementById('boxId').style.display='block';
+}
+
+
+
+}
+
+</script>
+
+
+</body>
+</html>

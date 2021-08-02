@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Img Map</title>
+<style type="text/css">
+	
+	#statec{ cursor: pointer; }
+
+   .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 55%;
+}
+
+/* The Close Button */
+.close {
+  color: #FFF;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+      margin-right: -39px;
+    margin-top: -27px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gtimg{ height: 400px; width: 410px; }
+
+.getimc{ height: 100px; width: 80px; margin-left: 15px; float: left; cursor: pointer; }
+.getimge{  height: 400px; width: 410px;}
+
+
+
+</style>
+
+<script type="text/javascript">
+	function getclose(){
+
+ 
+  document.getElementById('myModal').style.display='none';
+  
+  }
+
+
+	function getstate(s){
+
+    if(s=='MP'){
+
+   var state='Madya Pradesh';
+   var length='245666';
+   var lan='Hindi';
+   var papulation='5C';
+
+   document.getElementById('gtimg').src='images/mp.jpg';
+   document.getElementById('myModal').style.display='block';
+
+
+    }else if(s=='KL'){
+
+   var state='Kerala';
+   var length='45666';
+   var lan='English';
+   var papulation='3C';
+
+  document.getElementById('gtimg').src='images/Kerala.png';
+   document.getElementById('myModal').style.display='block';
+
+    }else if(s=='TN'){
+
+   var state='Thmil nadu ';
+   var length='66666';
+   var lan='Thamil,English';
+   var papulation='3.5C';
+
+   document.getElementById('gtimg').src='images/tamilnadu.png';
+   document.getElementById('myModal').style.display='block';
+
+    }
+    else if(s=='PB'){
+    var state='punjab ';
+   var length='66666';
+   var lan='hindi,English';
+   var papulation='4C';
+    
+    document.getElementById('gtimg').src='images/punjab.jpg';
+   document.getElementById('myModal').style.display='block';
+    }
+    else if(s=='CG'){
+    var state='chattisgarh ';
+   var length='66666';
+   var lan='hindi,English';
+   var papulation='4C';
+    }
+    document.getElementById('gtimg').src='images/chhatitisgarh.jpg';
+   document.getElementById('myModal').style.display='block';
+
+
+
+
+    document.getElementById('statedetails').innerHTML='<br>'+'State name :'+ state +'<br>'+'Length :' + length + '<br>'+ 'Lang:'+ lan +'<br>'+'Papulation: '+papulation;
+
+	}
+
+
+</script>
+
+</head>
+<body>
+
+
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+    <div class="modal-content">
+    <span class="close" onclick="getclose()">&times;</span>
+    <div>
+      
+    <img src="" id="gtimg" class="getimge">
+     
+    <span id="statedetails"></span>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- //https://www.image-map.net for image mapping /
+ --><img src="images/indiamap.jpg" usemap="#image-map">
+
+<map name="image-map">
+
+    <area target="" alt="" title=""  onclick="getstate('MP')" id="statec" coords="241,347,245,335,249,329,258,323,265,317,266,310,262,305,264,299,271,300,277,299,277,287,265,278,257,273,251,273,243,275,238,269,228,269,210,276,203,271,203,263,212,249,213,239,201,235,187,243,178,247,174,251,174,260,166,267,153,276,148,270,145,265,134,277,141,287,138,293,131,301,132,307,124,305,127,314,122,323,123,329,129,331,139,337,153,338,161,341,167,342,198,342,214,337,227,341" shape="poly">
+    <area target="" alt="" onclick="getstate('KL')" id="statec" title="" coords="124,510,132,514,137,521,142,525,152,529,155,537,158,542,161,552,164,560,170,564,173,570,174,578,168,586,171,599,164,599,154,582,141,539" shape="poly">
+
+    <area target="" alt="" title="" id="statec"  onclick="getstate('TN')" coords="156,532,162,536,166,530,170,534,180,530,178,519,184,515,191,512,195,505,210,511,215,504,221,507,227,501,233,512,220,532,222,552,224,560,216,561,204,577,204,583,191,588,185,597,175,611,167,604,173,601,167,588,176,579,170,577,173,567,169,561,161,552,159,542" shape="poly">
+    <area target="" alt="" title="" id="statec" onclick="getstate('PB')"  coords="144,173,137,173,130,169,129,155,134,151,138,143,144,133,150,125,156,128,158,135,162,142,170,145,170,156,172,161,171,169,162,170,155,177" shape="poly">
+    <area target="" alt="" title="" id="statec" onclick="getstate('CG')"coords="250,413,244,407,236,399,236,389,239,381,236,373,240,363,240,347,243,336,250,327,258,318,264,311,259,297,270,300,281,300,289,293,295,299,300,306,304,318,296,329,290,341,285,350,278,353,274,367,269,373,265,381,267,391,262,403" shape="poly">
+  </map>
+  </map>
+
+
+
+
+</body>
+</html>

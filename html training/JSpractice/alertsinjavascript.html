@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alerts In javascripts</title>
+
+<script type="text/javascript">
+	
+alert('Welcome to Javascript');
+var username='divya';
+var password='divya@123';
+
+var user=prompt("Please Enter UserName",' ');
+var pass=prompt("Please Enter password"," ");
+alert(user);
+if(user!='' && pass!=''){
+window.location.href='home.html';
+}else{
+var result ="user name and password wrong please try again !"
+}
+document.getElementById('getprompt').innerHTML=result;
+
+
+var username='divya';
+var password='divya@123';
+
+
+if(user==username && password==pass){
+window.location.href='home.html';
+}else {
+window.location.href='error.html';
+}
+
+
+function dodelete() {
+	// body...
+
+var kit;
+
+var con=confirm('Are you want to delete this record from table ');
+
+if(con==true){
+
+
+kit='Record removed from table ';
+
+//document.getElementById('row1').style.display='none';
+
+}else {
+
+kit='Record still with table';
+
+}
+
+document.getElementById('getstatus').innerHTML=kit;
+
+}
+
+
+function getpromtvalues(){
+
+var user=prompt("Please Enter UserName",' ');
+var pass=prompt("Please Enter password"," ");
+
+// if(user!='' && pass!=''){
+// window.location.href='image_maping.html';
+// }else{
+// var result ="user name and password wrong please try again !"
+// }
+// document.getElementById('getprompt').innerHTML=result;
+// }
+
+var username='divya';
+var password='divya@123';
+
+
+if(user==username && password==pass){
+window.location.href='image_maping.html';
+}else {
+window.location.href='error.html';
+}
+
+}
+
+
+
+
+</script>	
+</head>
+<body>
+
+
+
+
+<table>
+
+<p id="getstatus"></p>
+
+<p id="getprompt"></p>
+
+<tr><th>Sno</th><th>UserName</th><th>Email id</th><th>Mobile Number</th><th>Pin</th><th>Delete</th></tr>
+<tr id="row1"><td>1</td><td>VnekatCh</td><td>venkatCh@gmail.com</td><td>7864677881</td><td>530016</td><td><button onclick="dodelete()">Delete</button></td></tr>
+</table>
+
+
+
+
+
+
+
+<button onclick="getpromtvalues()">Prompt</button>
+
+<!-- <form onsubmit="formvalues()">
+
+UserName : <input type="" name="" id='UserName'>
+Password : <input type="" name="" id='Password'>
+
+<input type="submit" name="submit" value="submit">	
+
+
+</form>
+ -->
+
+
+
+
+
+
+
+
+</body>
+</html>

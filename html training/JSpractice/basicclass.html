@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Basic Javascript </title>
+
+<script type="text/javascript">
+	
+
+function justcheckfunction() {
+	
+
+	//alert('funcion checking');   // print values 
+
+	//document.write('get check'); 
+
+   // block elements in javascript
+
+   // let , var both use for varible in javascript
+
+  let x= document.getElementById('sal').innerHTML;    // get data from block elements 
+  let name=document.getElementById('name').innerHTML;
+  var cname=document.getElementById('getc').innerHTML;
+  var location=document.getElementById('loc').innerHTML;
+
+
+  var bio=name + ' My Salery ' + x + ' My Company  ' + cname + '  Present Location ' + location;
+
+ // inputs 
+
+ document.getElementById('getbio').value=bio;  // put data into non-block element means inputs 
+
+ document.getElementById('getres').innerHTML=bio; // put data into block ements 
+
+
+
+
+
+
+
+
+  //alert(x);
+  //alert(name);
+  //alert(cname);
+
+
+
+}
+
+
+function getdata(){
+
+
+let c=document.getElementById('getbio').value;  // input data get 
+//alert(c);
+
+document.getElementById('datagetfromscr').innerHTML=c;   //  .innerHTML=x
+
+
+
+
+
+}
+
+
+
+</script>
+
+
+</head>
+<body>
+<button onclick="justcheckfunction()">Click me</button>
+
+
+<button onclick="getdata()">Get data</button>
+
+
+<span id="sal">45000</span>
+
+<p id="name">Hi Venkat</p>
+
+<div id="getc">Rise </div>
+
+<span id="loc">Vizag</span>
+
+<input type="text" name="" value="Checkinggg...." id="getbio">
+
+
+<p id="getres"></p>
+
+
+<div  id='datagetfromscr' style="height: 300px; width: 300px; background-color: green">Need to add input value: </div>
+
+</body>
+</html>

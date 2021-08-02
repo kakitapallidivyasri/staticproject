@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+  
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <p id='div'></p>
+    <button onclick="logout()" >logout</button>
+
+    <script>
+
+        var jsonString= localStorage.getItem('signupDetails')
+        var details=JSON.parse(jsonString);
+        var line='welcome '+details.firstName+', '+details.lastName;
+        document.getElementById('div').innerHTML=line;
+
+        function logout(){
+            window.location.href='login.html';
+        }
+        
+            </script>
+</body>
+</html>

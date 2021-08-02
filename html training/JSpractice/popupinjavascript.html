@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Popup</title>
+
+
+<style type="text/css">
+		
+  .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 4px solid red;
+  width: 30%;
+}
+
+/* The Close Button */
+.close {
+  color: #FFF;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+      margin-right: -39px;
+    margin-top: -27px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  float: right;
+  cursor: pointer;
+}
+.getc{   
+	background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer; }
+
+.getinput{ width: 240px; height: 25px; padding: 2px;  }
+	
+#gtimg{ height: 350px; width: 410px; }
+</style>
+
+<script type="text/javascript">
+	
+	function getpopup(value) {
+		if (value=='ap'){
+			document.getElementById('gtimg').src='images/ap.png';
+		}
+		else if(value=='kerala'){
+			document.getElementById('gtimg').src='images/chicken.jpg';	
+		}else{
+      document.getElementById('gtimg').src='images/chicken.jpg';	
+    }
+
+	
+	document.getElementById('myModal').style.display='block';
+    }
+
+    function getclose(){
+
+    document.getElementById('myModal').style.display='none';
+
+    }
+
+
+
+</script>
+
+
+
+</head>
+<body>
+
+
+<button  class="button" onclick="getpopup()"> Login </button>
+
+	<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="getclose()">&times;</span>
+    <img src="" id="gtimg">
+   <!--  User Name<input type="text" name="Name" value="" class="getinput"> <br> <br>
+    Pass word <input type="teext" name="" value="" class="getinput"> <br><br>
+    <input type="submit" name="submit" value="Submit" class="getc"> -->
+  </div>
+
+</div>
+
+<select onchange="getpopup(this.value)"><option>tamilnadu</option><option>ap</option><option>kerala</option></select>
+
+
+<input type="text" name="" onblur="getpopup('ap')">
+
+
+
+
+</body>
+</html>

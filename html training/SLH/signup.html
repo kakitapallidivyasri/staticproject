@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="style.css">
+    <title>signup</title>
+<script>
+ function submitDetails(){
+    var fname=document.getElementById('firstNameId').value;
+    var lname=document.getElementById('lastNameId').value;
+    var email=document.getElementById('emailId').value;
+    var password=document.getElementById('passwordId').value;
+    var confirmPassword=document.getElementById('confirmPasswordId').value;
+    if(confirmPassword==password){
+        var jsonBody={
+	"firstName":fname,
+	"lastName":lname,
+	"email":email,
+	"password":password
+	
+}
+ var jsonString =JSON.stringify(jsonBody);
+localStorage.setItem('signupDetails',jsonString); 
+window.location.href='login.html';
+    }
+
+    
+ }
+
+
+</script>
+
+</head>
+<body>
+    
+    
+<div>
+    <label for="firstNameId"> firstname</label>
+    <input  id='firstNameId' type="text">
+</div>
+<div>
+    <label for="lastNameId"> lastname</label>
+    <input  id='lastNameId' type="text">
+</div>
+<div>
+    <label for="emailId"> email</label>
+    <input  id='emailId' type="email">
+</div>
+<div>
+    <label for="passwordId"> password</label>
+    <input  id='passwordId' type="password">
+</div>
+<div>
+    <label for="confirmPasswordId"> confirm password</label>
+    <input  id="confirmPasswordId" type="password">
+</div>
+<button onclick="submitDetails()" type="submit"> signup</button>
+
+</body>
+</html>
+
+
