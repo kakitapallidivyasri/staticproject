@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+    <title>Form Submission</title>
+
+
+</head>
+<body>
+  
+  <div class="alert alert-danger" id="failure-alert" role="alert">
+    
+  </div>
+  <div class="bg-light m-5 p-5">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">FirstName</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" id='firstNameId' aria-describedby="inputGroup-sizing-default">
+      </div>
+      
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">lastName</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" id='lastNameId' aria-describedby="inputGroup-sizing-default">
+      </div>
+      
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">email</span>
+        <input type="text" class="form-control" id='emailId'  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+        <input type="password" class="form-control" id='passwordId' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">confirm password</span>
+        <input type="password" class="form-control" aria-label="Sizing example input" id='confirmPasswordId'  aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Adharcard</span>
+        <input type="number" class="form-control" aria-label="Sizing example input" id='Adharcard'  aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">phoneNumber</span>
+        <input type="number" class="form-control" aria-label="Sizing example input" id='phoneNumber'  aria-describedby="inputGroup-sizing-default">
+      </div>
+    
+      <div class="col-auto">
+        <button  onclick="submitDetails()" type="submit" class="btn btn-primary mb-3" text-align="center" id="div">Submit</button>
+        
+      </div>
+  </div>
+
+  <h1 id = "details"></h1>
+
+</body>
+<script>
+  document.getElementById('failure-alert').style.display='none';
+  
+ 
+  function submitDetails(){ 
+    var fname=document.getElementById('firstNameId').value;
+    var lname=document.getElementById('lastNameId').value;
+    var email=document.getElementById('emailId').value;
+   var password=document.getElementById('passwordId').value;
+   var confirmPassword=document.getElementById('confirmPasswordId').value;
+   var Adharcard = document.getElementById('Adharcard').value;
+   var phoneNumber=document.getElementById('phoneNumber').value;
+    
+   
+  if(fname==undefined || fname==''){
+    document.getElementById('failure-alert').innerHTML='firstName is mandatory';
+    document.getElementById('failure-alert').style.display='block';
+  }
+  else if(lname==undefined|| lname==''){
+    document.getElementById('failure-alert').innerHTML='lastName is mandatory';
+    document.getElementById('failure-alert').style.display='block';
+  }
+  else if(email==undefined|| email==''){
+    document.getElementById('failure-alert').innerHTML='email is mandatory';
+    document.getElementById('failure-alert').style.display='block';
+  }
+   else if(password==undefined || password=='' ){
+    document.getElementById('failure-alert').innerHTML='password is mandatory';
+    document.getElementById('failure-alert').style.display='block';
+   
+  }
+  else if(confirmPassword==undefined || confirmPassword=='' ){
+  
+    document.getElementById('failure-alert').innerHTML='confirmpassword is mandatory';
+    document.getElementById('failure-alert').style.display='block';
+   
+  }
+  else if(password!=confirmPassword){
+    document.getElementById('failure-alert').innerHTML='password should match with confirmpassword';
+    document.getElementById('failure-alert').style.display='block';
+  } 
+  else if(Adharcard==undefined|| Adharcard==''){
+    document.getElementById('failure-alert').innerHTML='adharcard number is unique';
+    document.getElementById('failure-alert').style.display='block';
+  }
+  else if(phoneNumber==undefined|| phoneNumber==''){
+    document.getElementById('failure-alert').innerHTML='adharcard number is unique';
+    document.getElementById('failure-alert').style.display='block';
+  }
+  else{
+var a = fname;
+var b = lname;
+var c = email;
+var d = password;
+var e = confirmPassword;
+var f = Adharcard;
+var g = phoneNumber;
+
+
+var display = document.getElementById('details')
+display.innerHTML = a+b+c+d+e+f+g
+
+var array = [];
+array.push(a,b,c,d,e,f,g)
+console.log(array)
+
+
+  }
+  
+
+  
+
+  
+  
+  
+//    else {
+//        var jsonBody={
+//  "firstName":fname,
+//  "lastName":lname,
+//  "email":email,
+//  "password":password,
+//  "Adharcard":Adharcard,
+//  "phoneNumber":phoneNumber
+ 
+// }
+// var Array=[]
+// var jsonString =JSON.stringify(jsonBody);
+// Array.push('Submit',jsonString); 
+
+//    }
+
+
+
+   
+}
+
+
+</script>
+</html>
+
+
